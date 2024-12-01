@@ -14,7 +14,8 @@ class SantaCommunicatorTest(unittest.TestCase):
         self.communicator = SantaCommunicator(self.number_of_days_to_rest)
 
     def test_compose_message(self):
-        message = self.communicator.compose_message("Dasher", "North Pole", 5, self.number_of_day_before_christmas)
+        reindeer = ("Dasher", "North Pole", 5)
+        message = self.communicator.compose_message(reindeer, self.number_of_day_before_christmas)
         assert_that(message).is_equal_to(
             "Dear Dasher, please return from North Pole in 17 day(s) to be ready and rest before Christmas."
         )
