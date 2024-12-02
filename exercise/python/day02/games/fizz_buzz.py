@@ -6,6 +6,7 @@ MAX = 100
 FIZZ = 3
 BUZZ = 5
 WHIZZ = 7
+BANG = 11
 
 
 class FizzBuzz:
@@ -25,6 +26,8 @@ class FizzBuzz:
             result += "Buzz"
         if FizzBuzz.is_divisible_by(WHIZZ, input):
             result += "Whizz"
+        if FizzBuzz.is_divisible_by(BANG, input):
+            result += "Bang"
         if result == "":
             result = str(input)
         return result
