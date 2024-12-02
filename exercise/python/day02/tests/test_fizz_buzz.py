@@ -6,6 +6,12 @@ from games.fizz_buzz import FizzBuzz
 from tests.ValidInput import ValidInput
 
 
+
+CONVERSIONS = {3:"Fizz",
+               5:"Buzz",
+               7:"Whizz",
+               11:"Bang"}
+
 class FizzBuzzTests(unittest.TestCase):
     def test_returns_its_numbers_representation(self):
         test_data = [
@@ -29,7 +35,7 @@ class FizzBuzzTests(unittest.TestCase):
 
         for data in test_data:
             with ((self.subTest(data=data))):
-                assert_that(FizzBuzz.convert(data.input)
+                assert_that(FizzBuzz(CONVERSIONS).convert(data.input)
                             ).is_equal_to(data.expected_result)
 
     def test_fails_for_numbers_out_of_range(self):
@@ -37,7 +43,7 @@ class FizzBuzzTests(unittest.TestCase):
 
         for value in test_data:
             with self.subTest(value=value):
-                assert_that(FizzBuzz.convert(value)).is_none()
+                assert_that(FizzBuzz(CONVERSIONS).convert(value)).is_none()
 
 
 if __name__ == "__main__":

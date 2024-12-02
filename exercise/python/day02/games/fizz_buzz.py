@@ -9,25 +9,24 @@ WHIZZ = 7
 BANG = 11
 
 
+
 class FizzBuzz:
-    @staticmethod
-    def convert(input: int) -> Optional[str]:
+
+    def __init__(self, conversions):
+        self.conversions = conversions
+
+    def convert(self,input: int) -> Optional[str]:
         if FizzBuzz.is_out_of_range(input):
             return None
         else:
-            return FizzBuzz.convert_safely(input)
+            return self.convert_safely(input)
 
-    @staticmethod
-    def convert_safely(input: int) -> str:
+
+    def convert_safely(self,input: int) -> str:
         result = ''
-        if FizzBuzz.is_divisible_by(FIZZ, input):
-            result += "Fizz"
-        if FizzBuzz.is_divisible_by(BUZZ, input):
-            result += "Buzz"
-        if FizzBuzz.is_divisible_by(WHIZZ, input):
-            result += "Whizz"
-        if FizzBuzz.is_divisible_by(BANG, input):
-            result += "Bang"
+        for value,conversion in self.conversions.items():
+            if self.is_divisible_by(value, input):
+                result += conversion
         if result == "":
             result = str(input)
         return result
