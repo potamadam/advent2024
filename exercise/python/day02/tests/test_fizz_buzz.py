@@ -20,7 +20,9 @@ class FizzBuzzTests(unittest.TestCase):
             ValidInput(85, "Buzz"),
             ValidInput(15, "FizzBuzz"),
             ValidInput(30, "FizzBuzz"),
-            ValidInput(45, "FizzBuzz")
+            ValidInput(45, "FizzBuzz"),
+            ValidInput(21, 'FizzWhizz'),
+            ValidInput(35, 'BuzzWhizz')
         ]
 
         for data in test_data:

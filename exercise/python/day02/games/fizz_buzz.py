@@ -1,9 +1,11 @@
 from typing import Optional
 
+
 MIN = 1
 MAX = 100
 FIZZ = 3
 BUZZ = 5
+WHIZZ = 7
 
 
 class FizzBuzz:
@@ -21,6 +23,8 @@ class FizzBuzz:
             result += "Fizz"
         if FizzBuzz.is_divisible_by(BUZZ, input):
             result += "Buzz"
+        if FizzBuzz.is_divisible_by(WHIZZ, input):
+            result += "Whizz"
         if result == "":
             result = str(input)
         return result
