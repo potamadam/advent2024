@@ -2,7 +2,6 @@ from typing import Optional
 
 MIN = 1
 MAX = 100
-FIZZBUZZ = 15
 FIZZ = 3
 BUZZ = 5
 
@@ -17,14 +16,14 @@ class FizzBuzz:
 
     @staticmethod
     def convert_safely(input: int) -> str:
-        if FizzBuzz.is_divisible_by(FIZZBUZZ, input):
-            return "FizzBuzz"
-        elif FizzBuzz.is_divisible_by(FIZZ, input):
-            return "Fizz"
-        elif FizzBuzz.is_divisible_by(BUZZ, input):
-            return "Buzz"
-        else:
-            return str(input)
+        result = ''
+        if FizzBuzz.is_divisible_by(FIZZ, input):
+            result += "Fizz"
+        if FizzBuzz.is_divisible_by(BUZZ, input):
+            result += "Buzz"
+        if result == "":
+            result = str(input)
+        return result
 
     @staticmethod
     def is_divisible_by(divisor: int, input: int) -> bool:
